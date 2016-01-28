@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 import os
 macros = "./macros.js"
 source = "test/sweet-pattern-test.js"
