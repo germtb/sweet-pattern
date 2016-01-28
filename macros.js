@@ -10,7 +10,6 @@ macro def {
   // One parameter functions
   rule { $f:ident($x:lit) $rest ... ;  } => {
     const $f = function() {
-      const arg0 = arguments[0];
       def ($x) $rest ... ;
     }
   }
@@ -22,14 +21,14 @@ macro def {
   }
 
   rule { ($x:lit) => $exp:expr $rest ... ; } => {
-    if (arg0 === $x) {
+    if (arguments[0] === $x) {
       return $exp
     }
     def $rest ... ;
   }
 
   rule {, $f:ident($x:lit) => $exp:expr $rest ... ; } => {
-    else if (arg0 === $x) {
+    else if (arguments[0] === $x) {
       return $exp
     }
     def $rest ... ;
@@ -37,7 +36,7 @@ macro def {
 
   rule {, $f:ident($x) => $exp:expr ; } => {
     else {
-      return ($x => $exp)(arg0);
+      return ($x => $exp)(arguments[0]);
     }
   }
 
