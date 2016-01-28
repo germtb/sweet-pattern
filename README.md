@@ -9,7 +9,7 @@ To install it follow the instructions on their website or simply use:
 $ npm install -g sweet.js
 ```
 
-To test it:
+To run the tests:
 ```bash
-$ sjs sweet-pattern.js -o output.js
+$ python test.py
 ```
