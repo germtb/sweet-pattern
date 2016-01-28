@@ -43,10 +43,4 @@ macro def {
 
 }
 
-def f0() => "Hello sweet";
-
-def f1(x) => x * x;
-
-def fib(1) => 1,
-    fib(2) => 1,
-    fib(n) => fib(n - 1) + fib(n - 2);
+export def;
