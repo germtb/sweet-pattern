@@ -1,7 +1,7 @@
 macro def {
   rule { $f:ident $rest ... ;  } => {
     const $f = function() {
-      arg0 = arguments[0];
+      const arg0 = arguments[0];
       def $rest ... ;
     }
   }
