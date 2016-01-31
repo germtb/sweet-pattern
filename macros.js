@@ -14,9 +14,9 @@ macro def {
     }
   }
 
-  rule { $f:ident($x:ident) => $exp:expr ; } => {
-    const $f = function($x) {
-      return $exp;
+  rule { $f:ident($x:expr) => $exp:expr ; } => {
+    const $f = function() {
+      return ($x => $exp)(arguments[0]);
     }
   }
 

@@ -3,8 +3,8 @@ import {expect} from 'chai';
 describe('sweet-pattern', () => {
 
   it('should convert functions with no pattern', () => {
-    def f(x) => "Hello sweet";
-    expect(f(0)).to.equal("Hello sweet");
+    def f(x) => x;
+    expect(f(0)).to.equal(0);
   });
 
   it('should convert functions with pattern', () => {
@@ -24,6 +24,6 @@ describe('sweet-pattern', () => {
         fib(1) => 1,
         fib(n) => fib(n - 1) + fib(n - 2);
     expect(fib(5)).to.equal(8);
-  })
+  });
 
 });

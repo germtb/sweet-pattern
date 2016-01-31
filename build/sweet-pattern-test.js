@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 describe('sweet-pattern', () => {
     it('should convert functions with no pattern', () => {
-        const f$661 = function (x$662) {
-            return 'Hello sweet';
+        const f$661 = function () {
+            return (x$662 => x$662)(arguments[0]);
         };
-        expect(f$661(0)).to.equal('Hello sweet');
+        expect(f$661(0)).to.equal(0);
     });
     it('should convert functions with pattern', () => {
         const f$664 = function () {
