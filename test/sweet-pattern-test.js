@@ -34,4 +34,13 @@ describe('sweet-pattern', () => {
     expect(f("Honey bear")).to.equal("Honey bear");
   });
 
+  it('should convert functions with body and pattern', () => {
+    def f("Here comes the") => "sun",
+        f(x) => {
+      var y = x;
+      return y;
+    };
+    expect(f("Here comes the")).to.equal("sun");
+  });
+
 });

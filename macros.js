@@ -8,7 +8,7 @@ macro def {
   }
 
   // One parameter functions
-  rule { $f:ident($x:expr) => $exp ; } => {
+  rule { $f:ident($x:ident) => $exp ; } => {
     const $f = function() {
       return ($x => $exp)(arguments[0]);
     }
@@ -34,7 +34,13 @@ macro def {
     def $rest ... ;
   }
 
-  rule {, $f:ident($x) => $exp:expr ; } => {
+  rule {, $f:ident($x:ident) => $exp ; } => {
+    else {
+      return ($x => $exp)(arguments[0]);
+    }
+  }
+
+  rule {, $f:ident($x:ident) => $exp:expr ; } => {
     else {
       return ($x => $exp)(arguments[0]);
     }
