@@ -11,12 +11,14 @@ $ npm install -g sweet.js
 
 To run the tests:
 ```bash
-$ python test.py
+npm run test
 ```
+
+or:
 
 To watch the tests you can use (for example) fswatch:
 ```bash
-fswatch -o test | xargs -n1 ./test.py
+npm run test:watch
 ```
 
 ## Sweet examples

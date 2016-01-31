@@ -4,7 +4,9 @@
   "description": "Sweet js macros for pattern matching in javascript",
   "main": "sweet-pattern.js",
   "scripts": {
-    "test": "mocha ./build/*.js --compilers js:babel-core/register  --recursive"
+    "pretest": "sjs --module ./macros.js test/sweet-pattern-test.js build/sweet-pattern-tes",
+    "test": "mocha ./build/*.js --compilers js:babel-core/register  --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
