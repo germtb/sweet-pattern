@@ -8,15 +8,15 @@ macro def {
   }
 
   // One parameter functions
-  rule { $f:ident($x:lit) $rest ... ;  } => {
+  rule { $f:ident($x:expr) => $exp ; } => {
     const $f = function() {
-      def ($x) $rest ... ;
+      return ($x => $exp)(arguments[0]);
     }
   }
 
-  rule { $f:ident($x:expr) => $exp:expr ; } => {
+  rule { $f:ident($x:lit) $rest ... ;  } => {
     const $f = function() {
-      return ($x => $exp)(arguments[0]);
+      def ($x) $rest ... ;
     }
   }
 

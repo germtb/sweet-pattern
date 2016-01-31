@@ -35,4 +35,13 @@ describe('sweet-pattern', () => {
         };
         expect(fib$671(5)).to.equal(8);
     });
+    it('should convert functions with body and no pattern', () => {
+        const f$677 = function () {
+            return (x$678 => {
+                var y$679 = x$678;
+                return y$679;
+            })(arguments[0]);
+        };
+        expect(f$677('Honey bear')).to.equal('Honey bear');
+    });
 });
