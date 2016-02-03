@@ -14,13 +14,6 @@ To run the tests:
 npm run test
 ```
 
-or:
-
-To watch the tests you can use (for example) fswatch:
-```bash
-npm run test:watch
-```
-
 ## Sweet examples
 ```javascript
 def fib(0) => 1,
